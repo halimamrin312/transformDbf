@@ -1,0 +1,1 @@
+Apps belum bisa mendeteksi file diluar wokrspace

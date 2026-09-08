@@ -5,12 +5,16 @@ from io import StringIO
 import sqlalchemy as db
 import tempfile
 import os
+from dotenv import load_dotenv
+
+# Load the environment variables from the .env file
+load_dotenv()
 
 # Atribut Connection Postgress
-username = "postgres";
-password = 12345;
-host = "localhost:5432"
-dbDefault = "DbTest";
+username = os.getenv("DB_USERNAME")
+password = os.getenv("DB_PASSWORD")
+host = os.getenv("DB_HOST")
+dbDefault = os.getenv("DB_DATABASE")
 
 def connectDatabase(username,password,host,dbName):
     engine = db.create_engine(f'postgresql://{username}:{password}@{host}/{dbName}')

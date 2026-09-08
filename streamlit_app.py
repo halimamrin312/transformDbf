@@ -1,9 +1,10 @@
 import streamlit as st
 
 pages = {
-    ".DBF Converter": [
-        st.Page("singleFile.py", title="Single File"),
-        st.Page("multiFile.py", title="Multi File"),
+    "Transformer Tools": [
+        st.Page("multiFile.py", title="DBF Converter"),
+        st.Page("xlsxFile.py", title="XLSX Converter"),
+        st.Page("savFile.py", title="SAV Converter"),
     ],
     "Testing Code": [
         st.Page("test.py", title="test"),

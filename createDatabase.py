@@ -26,6 +26,7 @@ with engine.connect() as conn:
 
 
 df = pd.read_csv("Data Science - MetadaDatabase.csv")
+st.dataframe(df)
 
 if st.button('Buat Database'):
     with engine.connect() as conn:
@@ -33,4 +34,12 @@ if st.button('Buat Database'):
         conn = conn.execution_options(isolation_level="AUTOCOMMIT")
         for index,row in df.iterrows():
             conn.execute(text(f'CREATE DATABASE "{row['Nama Sekarang']}";'))
+            st.write(f"Database {row['Nama Sekarang']} berhasil dibuat!")
+
+if st.button('HAPUS Database'):
+    with engine.connect() as conn:
+    # Memastikan eksekusi tidak berada dalam transaksi (autocommit mode)
+        conn = conn.execution_options(isolation_level="AUTOCOMMIT")
+        for index,row in df.iterrows():
+            conn.execute(text(f'DROP DATABASE "{row['Nama Sekarang']}";'))
             st.write(f"Database {row['Nama Sekarang']} berhasil dibuat!")

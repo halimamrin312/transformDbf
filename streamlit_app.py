@@ -6,6 +6,9 @@ pages = {
         st.Page("xlsxFile.py", title="XLSX Converter"),
         st.Page("savFile.py", title="SAV Converter"),
     ],
+    "Database": [
+        st.Page("createDatabase.py", title="Create Database"),
+    ],
     "Testing Code": [
         st.Page("test.py", title="test"),
     ]

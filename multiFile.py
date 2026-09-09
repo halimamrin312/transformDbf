@@ -51,7 +51,6 @@ if uploaded_files:
             tmp.write(f.getvalue())
             fileList['nameFile'].append(f.name.rsplit(".", 1)[0])
             fileList['pathFile'].append(tmp.name)
-
     fileList = pd.DataFrame(fileList)
 
     # Jika hanya 1 file, langsung tampilkan tanpa perlu pilih dari tabel
